@@ -19,7 +19,7 @@ namespace Orders.backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            return Ok(await _context.Countries.ToListAsync());
+            return Ok(await _context.Countries.AsNoTracking().ToListAsync());
         }
 
         [HttpGet("{id}")]
